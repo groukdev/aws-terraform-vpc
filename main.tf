@@ -62,8 +62,8 @@ resource "aws_route_table_association" "public" {
 }
 
 resource "aws_eip" "nat_ips" {
-  count = var.nat_count
-  vpc   = true
+  count  = var.nat_count
+  domain = "vpc"
 
   tags = {
     Name = "NAT-EIP-${count.index + 1}"
